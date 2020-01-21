@@ -1,6 +1,8 @@
 <?php
+include "../mysqliParams.php";
+
 $date = "15/02/2012";
-$mysqli = new mysqli('127.0.0.1', 'admin', '', 'test');
+$mysqli = new mysqli($host, $userName, $password, $dbName);
 
 $sql = sprintf(
     'SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(real_duration))) AS timeSum FROM call_ticket WHERE Date(date) >= %s',

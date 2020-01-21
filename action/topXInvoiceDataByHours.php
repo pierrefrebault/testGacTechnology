@@ -1,6 +1,8 @@
 <?php
+include "../mysqliParams.php";
+
 $volume = [];
-$mysqli = new mysqli('127.0.0.1', 'admin', '', 'test');
+$mysqli = new mysqli($host, $userName, $password, $dbName);
 
 $sql = 'SELECT DISTINCT subscriber_number FROM call_ticket';
 $subscribers = $mysqli->query($sql);

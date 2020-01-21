@@ -1,6 +1,8 @@
 <?php
+include "../mysqliParams.php";
+
 $type = 'envoi de sms';
-$mysqli = new mysqli('127.0.0.1', 'admin', '', 'test');
+$mysqli = new mysqli($host, $userName, $password, $dbName);
 
 $sql = sprintf('SELECT COUNT(*)  FROM call_ticket WHERE type LIKE %s', '\''. $type.'%\'');
 

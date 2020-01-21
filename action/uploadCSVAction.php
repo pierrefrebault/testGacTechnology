@@ -1,11 +1,14 @@
 <?php
+include "../mysqliParams.php";
+
 $file = '../csv/tickets_appels_201202.csv';
 
 $csv = array_map('str_getcsv', file($file));
 array_shift($csv); # remove column header
 array_shift($csv); # remove column header
 array_shift($csv); # remove column header
-$mysqli = new mysqli('127.0.0.1', 'admin', '', 'test');
+
+$mysqli = new mysqli($host, $userName, $password, $dbName);
 
 $mysqli->query('TRUNCATE TABLE call_ticket'); // empty call_ticket table
 

@@ -2,6 +2,7 @@
 
 - Importer le fichier dump.sql  qui contient la structure de la base de donnée
 - Faire pointer l'alias d'apache sur le fichier index.php
+- Modifier les paramètres de connexions à la base de donnée dans le fichier "mysqliParams.php" à la racine du projet
 - lancer l'application web
 - l'interface permet :
     - de charger les tickets
